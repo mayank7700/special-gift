@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💖 Dear Vedika ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd1dc,#ffb6c1,#ffc0cb,#ffe4e1);
+    overflow:hidden;
+}
+
+.container{
+    background:white;
+    width:430px;
+    max-height:90vh;
+    overflow-y:auto;
+    padding:30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+    animation:pop .8s ease;
+}
+
+@keyframes pop{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+img{
+width:220px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+h2{
+color:#ff4f81;
+margin-bottom:15px;
+font-size:30px;
+}
+
+p{
+font-size:17px;
+line-height:1.8;
+color:#555;
+margin-bottom:20px;
+}
+
+button{
+padding:12px 35px;
+font-size:18px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin:10px;
+transition:.3s;
+}
+
+#yes{
+background:#ff4f81;
+color:white;
+box-shadow:0 0 20px #ff4f81;
+}
+
+#yes:hover{
+transform:scale(1.1);
+}
+
+#no{
+background:#ddd;
+position:relative;
+}
+
+#result{
+display:none;
+margin-top:20px;
+font-size:23px;
+font-weight:bold;
+color:#ff4f81;
+line-height:1.6;
+}
+
+.heart{
+position:absolute;
+font-size:30px;
+animation:float 5s linear forwards;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(.8);
+opacity:1;
+}
+100%{
+transform:translateY(-800px) scale(1.8);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Heart GIF -->
+<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Love">
+
+<h2>💌 Dear Vedika 💌</h2>
+
+<p>
+
+🌸 We met recently, but somehow I already feel so comfortable with you, as if we've known each other for so many years. ❤️
+
+<br><br>
+
+😊 Your presence makes me smile, and I truly enjoy talking to you. Every conversation with you becomes my favorite part of the day. 💬✨
+
+<br><br>
+
+🫂 You make me feel safe, understood, and cared for. That's a feeling I never want to lose. ❤️
+
+<br><br>
+
+🤍 I promise to always stand by your side, support you, and be there for you through every happiness and every challenge. 🌹
+
+<br><br>
+
+💍 Maybe 10 years from now, we'll look back at this moment together with smiles on our faces because we'll be married and living the beautiful life we dreamed about. 🏡❤️
+
+<br><br>
+
+🥹 My future feels brighter when I imagine you beside me.
+
+<br><br>
+
+💕 So, my Paglu...
+
+<br><br>
+
+❤️ <b>Vedika, I love you more than words can ever express.</b>
+
+<br><br>
+
+🥺 <b>Will you be mine?</b>
+
+<br>
+
+💖 <b>Can I be yours forever?</b>
+
+</p>
+
+<button id="yes">Yes ❤️</button>
+<button id="no">No 💔</button>
+
+<div id="result">
+💖🥹 Thank You! 🥹💖
+
+<br><br>
+
+❤️ I LOVE YOU, VEDIKA ❤️
+
+<br><br>
+
+🌹 You just made me the happiest person in the world.
+
+<br><br>
+
+💍 Forever starts today. 💕
+</div>
+
+</div>
+
+<script>
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+
+const x=Math.random()*(window.innerWidth-150);
+const y=Math.random()*(window.innerHeight-80);
+
+no.style.position="fixed";
+no.style.left=x+"px";
+no.style.top=y+"px";
+
+});
+
+document.getElementById("yes").onclick=()=>{
+
+document.getElementById("result").style.display="block";
+
+alert("❤️ I LOVE YOU VEDIKA ❤️\n\n🥹 Thank you for making me the happiest person.\n\n💍 Forever & Always. 💕");
+
+for(let i=0;i<150;i++){
+
+setTimeout(()=>{
+
+const heart=document.createElement("div");
+
+heart.className="heart";
+
+const emojis=["❤️","💖","💕","💘","💝","💗","💞"];
+
+heart.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+heart.style.left=Math.random()*window.innerWidth+"px";
+heart.style.top=window.innerHeight+"px";
+heart.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000);
+
+},i*35);
+
+}
+
+};
+
+</script>
+
+</body>
+</html>
